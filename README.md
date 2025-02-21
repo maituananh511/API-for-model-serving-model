@@ -9,7 +9,7 @@ This repository provides a FastAPI-based API for serving ML models using NVIDIA 
    ```
 2. Run Triton Server (ensure Docker is installed):
    ```bash
-   docker run --rm --gpus all -p 8000:8000 -v "D:/working/fast_api/models:/models" nvcr.io/nvidia/tritonserver:23.10-py3 tritonserver --model-repository=/models
+   docker run --rm --gpus all -p 8000:8000 -v "D:/working/fast_api/models:/models" nvcr.io/nvidia/tritonserver:25.01-py3 tritonserver --model-repository=/models
    ```
 3. Start FastAPI:
    ```bash
