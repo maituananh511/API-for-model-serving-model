@@ -7,7 +7,7 @@ import torchvision.transforms as transforms
 app = FastAPI()
 
 # Triton server URL
-TRITON_SERVER_URL = "localhost:8000"
+TRITON_SERVER_URL = "localhost:8080"
 MODEL_NAME = "densenet_onnx"
 
 # Connect to Triton Inference Server
@@ -21,7 +21,7 @@ def preprocess_image(image: Image.Image):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     image = transform(image).numpy()  # Convert to NumPy format (3, 224, 224)
-    return image  # Không cần thêm batch dimension
+    return image  
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
