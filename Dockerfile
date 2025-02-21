@@ -5,7 +5,7 @@ FROM nvcr.io/nvidia/tritonserver:25.01-py3-sdk
 WORKDIR /workspace
 
 # Install necessary Python packages
-RUN pip install --no-cache-dir fastapi uvicorn numpy tritonclient torchvision pillow python-multipart
+RUN pip install --no-cache-dir fastapi uvicorn numpy tritonclient[all] torchvision pillow python-multipart
 
 # Copy FastAPI app into the container
 COPY main.py /workspace/main.py
