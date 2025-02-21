@@ -7,7 +7,7 @@ import torchvision.transforms as transforms
 app = FastAPI()
 
 # Triton server URL
-TRITON_SERVER_URL = "localhost:8000"
+TRITON_SERVER_URL = "localhost:8080"
 MODEL_NAME = "densenet_onnx"
 
 # Connect to Triton Inference Server
